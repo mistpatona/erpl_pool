@@ -52,7 +52,8 @@ time_to_go(TimeOut={{_,_,_}, {_,_,_}}) ->
     Secs = if ToGo > 0  -> ToGo;
               ToGo =< 0 -> 0
            end,
-    normalize(Secs).
+    normalize(Secs);
+time_to_go(Secs) -> normalize(Secs).
 
 %% Because Erlang is limited to about 49 days (49*24*60*60*1000) in
 %% milliseconds, the following function is used
